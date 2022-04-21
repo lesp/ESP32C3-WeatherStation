@@ -39,6 +39,17 @@ if wlan.isconnected() == True:
 		np.fill((0,0,0))
 		np.write()
 		time.sleep(0.1)
+	print(
+	'''
+	   ____  | |    (_)       | |                  
+	  / __ \ | |__   _   __ _ | |  ___  ___  _ __  
+	 / / _` || '_ \ | | / _` || | / _ \/ __|| '_ \ 
+	| | (_| || |_) || || (_| || ||  __/\__ \| |_) |
+	 \ \__,_||_.__/ |_| \__, ||_| \___||___/| .__/ 
+	  \____/             __/ |              | |    
+			    |___/               |_| 
+	'''
+	     )
 else:
 	for i in range(3):
 		np.fill((16,0,0))
@@ -49,9 +60,21 @@ else:
 		time.sleep(0.1)
 time.sleep(3)
 		
+#Disco Mode!
+for i in range(100):
+	r = randint(0,16)
+	g = randint(0,16)
+	b = randint(0,16)
+	x = randint(0,24)
+	np[x] = (r,g,b)
+	np.write()
+	time.sleep(0.1)
+
+np.fill((0,0,0))
+np.write()
 while True:
 	#Get the weather data
-	r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Blackpool,UK&appid=282f4cee730d75261ae4855ee7719e44").json()
+	r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Blackpool,UK&appid=--OPEN WEATHER MAP API KEY HERE").json()
 	weather = r["weather"][0]["main"]
 	#Change the weather here to test the conditional tests.
 	#weather = "Cats and dogs"
