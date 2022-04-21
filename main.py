@@ -51,7 +51,7 @@ time.sleep(3)
 		
 while True:
 	#Get the weather data
-	r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Blackpool,UK&appid=282f4cee730d75261ae4855ee7719e44").json()
+	r = urequests.get("http://api.openweathermap.org/data/2.5/weather?q=Blackpool,UK&appid=--YOUR OPEN WEATHER MAP API KEY HERE--").json()
 	weather = r["weather"][0]["main"]
 	#Change the weather here to test the conditional tests.
 	#weather = "Cats and dogs"
